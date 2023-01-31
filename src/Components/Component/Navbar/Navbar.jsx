@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './Navbar.scss';
 import { FaSearch } from 'react-icons/fa';
-import { AiTwotoneSetting, AiFillFileText } from 'react-icons/ai';
+import { RiMoneyDollarCircleFill } from 'react-icons/ri';
+import { AiTwotoneSetting, AiFillFileText, AiFillWarning } from 'react-icons/ai';
 import { MdNotifications, MdEmail } from 'react-icons/md';
 import { Popover } from '@mui/material';
 import { Link } from 'react-router-dom';
@@ -30,6 +31,7 @@ const Navbar = () => {
                     <MdNotifications className='icon' onClick={handleClick} />
                     <span className='updates'></span>
                     <Popover
+                        className='notify'
                         anchorEl={anchorEl}
                         open={open}
                         onClose={handleClose}
@@ -41,26 +43,47 @@ const Navbar = () => {
                             vertical: 'top',
                             horizontal: 'right',
                         }}
+
                     >
                         <div className="notify-pop">
+                            <span className='header'>ALERTS CENTER</span>
                             <div className="item">
                                 <div className="left">
-                                    <span><AiFillFileText /></span>
+                                    <span className='doc'><AiFillFileText /></span>
                                 </div>
                                 <div className="right">
                                     <small>January 28, 2023</small>
                                     <span>A new month report is ready to download</span>
                                 </div>
                             </div>
+                            <div className="item">
+                                <div className="left">
+                                    <span className='success'><RiMoneyDollarCircleFill /></span>
+                                </div>
+                                <div className="right">
+                                    <small>January 28, 2023</small>
+                                    <span>$290.29 has been deposited into your account!</span>
+                                </div>
+                            </div>
+                            <div className="item">
+                                <div className="left">
+                                    <span className='warning'><AiFillWarning /></span>
+                                </div>
+                                <div className="right">
+                                    <small>January 28, 2023</small>
+                                    <span>Spending Alert: We've noticed unusually high spending for your account.</span>
+                                </div>
+                            </div>
+                            <Link to='/'>
+                                <span className='show-all'>SHOW ALL ALERTS</span>
+                            </Link>
                         </div>
                     </Popover>
                 </div>
                 <div className='option'>
-                    <MdEmail className='icon' />
-                    <span className='updates'></span>
-                </div>
-                <div className='option'>
-                    <AiTwotoneSetting className='icon' />
+                    <Link to='/settings'>
+                        <AiTwotoneSetting className='icon' />
+                    </Link>
                     <span className='updates'></span>
                 </div>
                 <Link to='account'>
