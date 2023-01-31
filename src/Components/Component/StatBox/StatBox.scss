@@ -1,0 +1,27 @@
+.stat{
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .left{
+        display: flex;
+        flex-direction: column;
+
+        h4{
+            font-size: 15px;
+            font-weight: 700;
+        }
+        span{
+            font-size: 22px;
+            font-weight: 600;
+        }
+    }
+    .right{
+        span{
+            font-size: 30px;
+            color: #7EB874;
+        }
+    }
+}

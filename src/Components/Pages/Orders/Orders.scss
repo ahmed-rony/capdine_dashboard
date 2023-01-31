@@ -1,0 +1,46 @@
+.orders {
+    padding: 10px 30px 60px;
+
+    .grid-content {
+        width: 100%;
+        height: 75vh;
+
+        .css-z8fhq1-MuiDataGrid-columnHeaders {
+            background: #013A20 !important;
+            color: #fff !important;
+
+            .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root {
+                color: #fff !important;
+            }
+
+            .css-ptiqhd-MuiSvgIcon-root {
+                color: #fff !important;
+            }
+        }
+
+        .css-1w5m2wr-MuiDataGrid-virtualScroller {
+            background: rgba(210, 251, 164, 0.6) !important;
+            font-family: 'Source Sans Pro', sans-serif !important;
+            font-weight: 600 !important;
+            font-size: 15px !important;
+        }
+
+        .css-17jjc08-MuiDataGrid-footerContainer {
+            background: #013A20 !important;
+            border-bottom-left-radius: 4px !important;
+            border-bottom-right-radius: 4px !important;
+
+            .css-rtrcn9-MuiTablePagination-root {
+                color: #fff !important;
+            }
+
+            .css-pqjvzy-MuiSvgIcon-root-MuiSelect-icon {
+                color: #fff !important;
+            }
+
+            .css-i4bv87-MuiSvgIcon-root {
+                color: #fff !important;
+            }
+        }
+    }
+}

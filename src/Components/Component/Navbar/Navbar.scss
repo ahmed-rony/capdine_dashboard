@@ -1,0 +1,127 @@
+.navbar {
+    height: 70px;
+    width: 100%;
+    padding: 0 30px 0 20px;
+    background: rgba(126, 184, 116, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .search {
+        display: flex;
+        align-items: center;
+
+        input {
+            width: 350px;
+            border: none;
+            outline: none;
+            padding: 8px 10px;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+
+        }
+
+        button {
+            padding: 7px 15px;
+            border: none;
+            background: #01522d;
+            color: #fff;
+            font-weight: bolder;
+            font-size: 17px;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+    }
+
+    .options {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        .option {
+            position: relative;
+            cursor: pointer;
+
+            .icon {
+                font-size: 24px;
+                color: #01522d;
+
+                &:hover {
+                    color: #067945;
+                }
+
+                transition: all ease 0.3s;
+                -webkit-transition: all ease 0.3s;
+                -moz-transition: all ease 0.3s;
+                -ms-transition: all ease 0.3s;
+                -o-transition: all ease 0.3s;
+            }
+
+
+            .updates {
+                width: 10px;
+                height: 10px;
+                background: #ffffff;
+                border: 3px solid red;
+                position: absolute;
+                top: 0;
+                right: 0;
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+            }
+
+            .notify-pop {
+                width: 300px !important;
+                height: 400px !important;
+                background: red;
+
+                .item {
+                    padding: 10px;
+                    display: flex;
+                    align-items: center;
+
+                    .left {
+                        width: 50px;
+                        height: 50px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                    }
+
+                }
+            }
+        }
+        .user{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding-left: 20px;
+            border-left: 1px solid #01522d;
+            cursor: pointer;
+
+            span{
+                font-size: 15px;
+                font-weight: 600;
+                color: #000;
+            }
+            img{
+                width: 35px;
+                height: 35px;
+                object-fit: cover;
+                border: 2px solid #01522d;
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+}
+        }
+    }
+}
