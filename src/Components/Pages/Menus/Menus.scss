@@ -1,23 +1,102 @@
-.menus {
-    padding: 10px 30px 60px;
+@import '../../../style.scss';
 
-    .grid-content {
-        width: 100%;
-        height: 75vh;
+.menus {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+    p {
+        margin-bottom: 0;
     }
+
+    .menu-content {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+
+        .grid-content {
+            width: 100%;
+            height: 75vh;
+            margin-bottom: 40px;
+
+            @include mobile {
+                display: none;
+            }
+
+            @include tablet {
+                height: 60vh;
+            }
+
+            .menu-header {
+                background: rgba(210, 251, 164, 0.8);
+                padding: 10px;
+
+                @include tablet {
+                    padding: 15px;
+                }
+
+                h3 {
+                    font-size: 22px;
+                    font-weight: 600;
+                    margin-bottom: 0;
+                }
+
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+            }
+
+            .css-i4bv87-MuiSvgIcon-root {
+                color: #fff !important;
+            }
+
+            .restaurant {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                img {
+                    width: 30px;
+                    height: 30px;
+                    object-fit: cover;
+                    border-radius: 50%;
+                    -webkit-border-radius: 50%;
+                    -moz-border-radius: 50%;
+                    -ms-border-radius: 50%;
+                    -o-border-radius: 50%;
+                    border: 1px solid #01522d;
+                }
+            }
+
+            .meal {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                img {
+                    width: 30px;
+                    height: 30px;
+                    object-fit: cover;
+                    border-radius: 50%;
+                    -webkit-border-radius: 50%;
+                    -moz-border-radius: 50%;
+                    -ms-border-radius: 50%;
+                    -o-border-radius: 50%;
+                    border: 1px solid #01522d;
+                }
+            }
+        }
+    }
+
 }
 
 .css-1j9kmqg-MuiDataGrid-toolbarContainer {
     min-height: 40px !important;
     background: #01522d !important;
-    border-top-left-radius: 4px !important;
-    border-top-right-radius: 4px !important;
-
+    border: none;
 }
 
 .css-1knaqv7-MuiButtonBase-root-MuiButton-root {
     color: #fff !important;
-
 }
 
 .css-z8fhq1-MuiDataGrid-columnHeaders {
@@ -25,7 +104,6 @@
     color: #fff !important;
     border-top-left-radius: 0 !important;
     border-top-right-radius: 0 !important;
-
 }
 
 .css-ptiqhd-MuiSvgIcon-root {
@@ -43,6 +121,8 @@
     background: #013A20 !important;
     border-bottom-left-radius: 4px !important;
     border-bottom-right-radius: 4px !important;
+    display: flex;
+    align-items: center;
 
 }
 
@@ -51,9 +131,5 @@
 }
 
 .css-pqjvzy-MuiSvgIcon-root-MuiSelect-icon {
-    color: #fff !important;
-}
-
-.css-i4bv87-MuiSvgIcon-root {
     color: #fff !important;
 }

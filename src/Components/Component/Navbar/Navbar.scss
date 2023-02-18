@@ -1,15 +1,25 @@
+@import '../../../style.scss';
+
 .navbar {
     height: 70px;
     width: 100%;
     padding: 0 30px 0 20px;
-    background: rgba(126, 184, 116, 0.5);
+    background: rgba(210, 251, 164, 0.6);
     display: flex;
     align-items: center;
     justify-content: space-between;
 
+    @include mobile {
+        padding: 0 10px;
+    }
+
     .search {
         display: flex;
         align-items: center;
+
+        @include mobile {
+            display: none;
+        }
 
         input {
             width: 350px;
@@ -22,17 +32,37 @@
             border-top-left-radius: 5px;
             border-bottom-left-radius: 5px;
 
+            @include tablet {
+                padding: 7px 10px;
+                width: 250px;
+            }
+
         }
 
         button {
-            padding: 7px 15px;
-            border: none;
-            background: #01522d;
-            color: #fff;
+            padding: 12px 15px;
             font-weight: bolder;
             font-size: 17px;
             border-top-right-radius: 5px;
             border-bottom-right-radius: 5px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+
+            @include tablet {
+                font-size: 16px;
+            }
+        }
+    }
+
+    .mob-logo {
+        display: none;
+
+        @include mobile {
+            display: inline-block;
+        }
+
+        img {
+            width: 120px;
         }
     }
 
@@ -41,13 +71,34 @@
         align-items: center;
         gap: 15px;
 
+        .setting1 {
+            display: inline-block;
+
+            @include mobile {
+                display: none;
+            }
+        }
+
         .option {
             position: relative;
             cursor: pointer;
 
+
+            &.mo-option {
+                display: none;
+
+                @include mobile {
+                    display: inline-block;
+                }
+            }
+
             .icon {
                 font-size: 24px;
                 color: #01522d;
+
+                @include mobile {
+                    font-size: 22px;
+                }
 
                 &:hover {
                     color: #067945;
@@ -58,6 +109,7 @@
                 -moz-transition: all ease 0.3s;
                 -ms-transition: all ease 0.3s;
                 -o-transition: all ease 0.3s;
+
             }
 
 
@@ -74,6 +126,14 @@
                 -moz-border-radius: 50%;
                 -ms-border-radius: 50%;
                 -o-border-radius: 50%;
+
+
+                @include mobile {
+                    background: red;
+                    border: none;
+                    width: 7px;
+                    height: 7px;
+                }
             }
 
 
@@ -87,31 +147,188 @@
             border-left: 1px solid #01522d;
             cursor: pointer;
 
+            @include mobile {
+                padding-left: 10px;
+            }
+
+            @include tablet {
+                padding: 0 10px;
+            }
+
             span {
                 font-size: 15px;
                 font-weight: 600;
                 color: #000;
+
+                @include mobile {
+                    display: none;
+                }
+
+                @include tablet {
+                    display: none;
+                }
             }
 
             img {
                 width: 35px;
                 height: 35px;
                 object-fit: cover;
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
                 border: 2px solid #01522d;
+
+                @include mobile {
+                    border: 1px solid #01522d;
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+    }
+
+}
+
+.offcanvas {
+    z-index: 9999999;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    background: #01522d;
+    height: 100vh;
+    overflow: scroll;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    @include mobile {
+        display: flex;
+    }
+
+    .offcanvas-header {
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+
+        .btn-close {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+        }
+
+        .title {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            img {
+                width: 80px;
+                height: 80px;
+                object-fit: cover;
                 border-radius: 50%;
                 -webkit-border-radius: 50%;
                 -moz-border-radius: 50%;
                 -ms-border-radius: 50%;
                 -o-border-radius: 50%;
             }
+
+            span {
+                font-size: 26px;
+                font-weight: 700;
+                color: #fff;
+            }
         }
     }
+
+    .content {
+        width: 100%;
+        padding: 0;
+        display: block;
+
+        .menus {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            padding: 0;
+
+            ul {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 0;
+                padding-left: 0;
+
+                .menu {
+                    width: 100%;
+
+                    li {
+                        width: 100%;
+                        font-size: 20px;
+                        font-weight: 600;
+                        color: #fcfcfc;
+                        cursor: pointer;
+                        padding: 10px 0;
+                        text-align: center;
+
+                        &:hover {
+                            color: #01522d;
+                            background: rgba(210, 251, 164, 0.6);
+                        }
+
+                        transition: all ease 0.3s;
+                        -webkit-transition: all ease 0.3s;
+                        -moz-transition: all ease 0.3s;
+                        -ms-transition: all ease 0.3s;
+                        -o-transition: all ease 0.3s;
+                    }
+                }
+
+            }
+
+            button {
+                width: 40%;
+                font-size: 20px;
+                padding: 7px 50px;
+                border: none;
+                border-radius: 5px;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                -ms-border-radius: 5px;
+                -o-border-radius: 5px;
+                transition: all ease 0.3s;
+                -webkit-transition: all ease 0.3s;
+                -moz-transition: all ease 0.3s;
+                -ms-transition: all ease 0.3s;
+                -o-transition: all ease 0.3s;
+
+                &:hover {
+                    background: #000;
+                    color: #fff;
+                }
+            }
+        }
+    }
+
 }
 
 .notify {
 
     .notify-pop {
         width: 320px !important;
+
+        @include mobile {
+            width: 300px !important;
+        }
 
         .header {
             font-size: 15px;
@@ -167,6 +384,12 @@
                     -moz-border-radius: 50%;
                     -ms-border-radius: 50%;
                     -o-border-radius: 50%;
+
+                    @include mobile {
+                        width: 35px;
+                        height: 35px;
+                        font-size: 16px;
+                    }
 
                     &.doc {
                         background: #4E73DF;

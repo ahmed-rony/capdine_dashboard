@@ -2,16 +2,54 @@ import React from 'react';
 import './Menus.scss';
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import { Paper } from '@mui/material';
-import { mockDataContacts } from '../../Data/mockData';
+import { mockDataMenus, mockDataPartnersMenus } from '../../Data/mockData';
+import AddOnMenu from '../../Component/AddOnMenu/AddOnMenu';
+import MobileMenu from '../../Component/MobileMenu/MobileMenu';
+import Partners from '../../Component/Partners/Partners';
+import { BsHouseFill } from 'react-icons/bs';
+import { FaPeopleArrows } from 'react-icons/fa';
 
 const Menus = () => {
+
     const columns = [
-        { field: "id", headerName: "ID" },
-        { field: 'name', headerName: 'Name', flex: 1 },
-        { field: 'age', headerName: 'Age', type: 'number', headerAlign: 'left', align: 'left' },
-        { field: 'phone', headerName: 'Phone Number', flex: 1 },
-        { field: 'email', headerName: 'Email', flex: 1 },
-        { field: "address", headerName: "Address", flex: 1, },
+        { field: 'id', headerName: 'ID', Width: 40 },
+        {
+            field: 'meal', headerName: 'Meal', flex: 1, renderCell: ({ row: { imgUrl, meal } }) => {
+                return (
+                    <div className='meal'>
+                        <img src={imgUrl} alt="" />
+                        <span>{meal}</span>
+                    </div>
+                )
+            }
+        },
+        { field: 'time', headerName: 'Prep. Time', flex: 1 },
+        { field: 'price', headerName: 'Price', flex: 1 },
+    ]
+    const columns2 = [
+        { field: 'id', headerName: 'ID', Width: 40 },
+        {
+            field: 'meal', headerName: 'Meal', flex: 1, renderCell: ({ row: { imgUrl, meal } }) => {
+                return (
+                    <div className='meal'>
+                        <img src={imgUrl} alt="" />
+                        <span>{meal}</span>
+                    </div>
+                )
+            }
+        },
+        { field: 'time', headerName: 'Prep. Time', flex: 1 },
+        { field: 'price', headerName: 'Price', flex: 1 },
+        {
+            field: 'restaurant', headerName: 'Restaurant', flex: 1, renderCell: ({ row: { logo, restaurant } }) => {
+                return (
+                    <div className='restaurant'>
+                        <img src={logo} alt="" />
+                        <span>{restaurant}</span>
+                    </div>
+                )
+            }
+        },
     ]
 
     return (
@@ -19,13 +57,32 @@ const Menus = () => {
             <div className="title">
                 <h1>Menus</h1>
             </div>
-            <Paper elevation={3} className='grid-content'>
-                <DataGrid
-                    rows={mockDataContacts}
-                    columns={columns}
-                    components={{Toolbar: GridToolbar}}
-                />
-            </Paper>
+            <div className="menu-content">
+                <AddOnMenu />
+                <Partners />
+                <Paper elevation={3} className='grid-content'>
+                    <div className="menu-header">
+                        <h3>House Menu <BsHouseFill /></h3>
+                    </div>
+                    <DataGrid
+                        rows={mockDataMenus}
+                        columns={columns}
+                        components={{ Toolbar: GridToolbar }}
+                    />
+                </Paper>
+                <Paper elevation={3} className='grid-content'>
+                    <div className="menu-header">
+                        <h3>Partners' Menu <FaPeopleArrows /></h3>
+                    </div>
+                    <DataGrid
+                        rows={mockDataPartnersMenus}
+                        columns={columns2}
+                        components={{ Toolbar: GridToolbar }}
+                    />
+                </Paper>
+                {/* for mobile */}
+                <MobileMenu />
+            </div>
         </div>
     );
 };

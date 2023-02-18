@@ -2,7 +2,7 @@ import { ResponsiveLine } from '@nivo/line';
 import React from 'react';
 import { mockLineData as data } from '../../Data/mockData';
 
-const LineChart = ({ isDashboard = false}) => {
+const LineChart = ({ isDashboard = false }) => {
     return (
         <>
             <ResponsiveLine

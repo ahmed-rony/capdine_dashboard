@@ -2,6 +2,7 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Leftbar from '../Leftbar/Leftbar';
 import Navbar from '../Navbar/Navbar';
+import OrderPopUp from '../OrderPopUp/OrderPopUp';
 
 const Layout = () => {
     return (
@@ -12,6 +13,7 @@ const Layout = () => {
                     <Navbar />
                     <Outlet />
                 </div>
+                <OrderPopUp />
             </div>
         </>
     );

@@ -4,7 +4,7 @@ import { mockPieData as data } from '../../Data/mockData';
 
 const PieChart = ({isDashboard = false}) => {
     return (
-        <section style={isDashboard ? { height: "300px" } : { height: "75vh" }}>
+        <section style={isDashboard ? { height: "300px", width: '99%' } : { height: "75vh", width: '99%'  }}>
             <ResponsivePie
                 data={data}
                 margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
@@ -47,7 +47,7 @@ const PieChart = ({isDashboard = false}) => {
                         translateX: 0,
                         translateY: 56,
                         itemsSpacing: 0,
-                        itemWidth: isDashboard ? 70 : 100,
+                        itemWidth: isDashboard ? 65 : 90,
                         itemHeight: 18,
                         itemTextColor: '#999',
                         itemDirection: 'left-to-right',

@@ -1,0 +1,93 @@
+@import '../../../style.scss';
+
+.register {
+    width: 100%;
+    height: 100vh;
+    background: url('https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    &::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.4);
+    }
+
+    .register-form {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .register-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            width: 35%;
+            gap: 10px;
+            z-index: 9;
+
+            @include tablet {
+                width: 60%;
+            }
+
+            @include mobile {
+                width: 90%;
+            }
+
+            h2 {
+                font-size: 30px;
+                font-weight: 700;
+                color: #01522d;
+                text-decoration: underline;
+            }
+
+            input {
+                width: 280px;
+                padding: 10px;
+
+                @include mobile {
+                    width: 250px;
+                }
+            }
+
+            .register-btn {
+                width: 35%;
+                padding: 5px;
+                margin-top: 20px;
+                font-size: 18px;
+
+                @include mobile {
+                    width: 50%;
+                }
+            }
+
+            .google-btn {
+                width: 35%;
+                padding: 5px;
+                font-size: 18px;
+                display: flex;
+                align-items: center;
+
+                @include mobile {
+                    width: 50%;
+                }
+
+                .google-icon {
+                    font-size: 22px;
+                    margin-bottom: 3px;
+                }
+            }
+        }
+    }
+}

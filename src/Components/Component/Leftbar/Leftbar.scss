@@ -1,7 +1,25 @@
+@import '../../../style.scss';
+
+.css-1wvake5 {
+
+    @include tablet {
+        min-width: 210px !important;
+
+        &.ps-collapsed {
+            min-width: 80px !important;
+        }
+    }
+}
+
 .sidebar {
     height: 100vh;
     position: sticky !important;
     top: 0;
+    z-index: 999;
+
+    @include mobile {
+        display: none;
+    }
 
     .menu {
         width: 100%;
@@ -9,6 +27,7 @@
         font-family: 'Source Sans Pro', sans-serif;
         background: #01522d;
         overflow: scroll;
+        padding-bottom: 40px;
 
         .header {
             width: 100%;
@@ -18,19 +37,24 @@
             padding: 7px 0 7px 3px;
 
             .logo {
-                width: 100%;
-                height: 100%;
                 display: flex;
                 color: #fff;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
                 gap: 60px;
+                @include tablet {
+                    gap: 75px;
+                }
 
                 img {
                     width: 120px;
                     height: fit-content;
                     margin-top: 10px;
+
+                    @include tablet {
+                        width: 90px;
+                    }
                 }
             }
         }
@@ -53,11 +77,19 @@
                 -ms-border-radius: 50%;
                 -o-border-radius: 50%;
                 object-fit: cover;
+
+                @include tablet {
+                    width: 80px;
+                    height: 80px;
+                }
             }
 
             span {
                 font-size: 20px;
                 font-weight: 600;
+                @include tablet {
+                    font-size: 18px;
+                }
             }
 
             small {
@@ -80,6 +112,10 @@
                 -ms-border-radius: 50%;
                 -o-border-radius: 50%;
                 object-fit: cover;
+                @include tablet {
+                    width: 45px;
+                    height: 45px;
+                }
             }
         }
 
@@ -88,15 +124,19 @@
             font-weight: 600;
             padding-left: 3px;
             background: #7EB874;
+            @include tablet {
+                font-size: 18px;
+            }
         }
 
-        .css-16jkw2k{
+        .css-16jkw2k {
             background: #01522d;
 
         }
+
         .css-16jkw2k>.ps-menu-button {
             color: #d1d1d1;
-            
+
 
             &:hover {
                 background: #01522d;
@@ -126,11 +166,13 @@
             -ms-transition: all ease 0.3s;
             -o-transition: all ease 0.3s;
         }
-        .css-16jesut{
+
+        .css-16jesut {
             padding-left: 3px;
         }
+
         .css-eh8qic>.ps-menu-button {
-            background: #7EB874;
+            background: rgba(210, 251, 164, 0.6);
             color: #000;
         }
 
@@ -139,6 +181,7 @@
         }
     }
 }
-.css-1wvake5{
+
+.css-1wvake5 {
     border-right-width: 0 !important;
 }

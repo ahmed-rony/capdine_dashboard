@@ -1,0 +1,38 @@
+@import '../../../style.scss';
+
+.stat-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    @include mobile {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .stat-items {
+        width: 100%;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        @include tablet {
+            flex-direction: column;
+
+            .stat {
+                width: 100%;
+            }
+        }
+
+        @include mobile {
+            flex-direction: column;
+            gap: 20px;
+
+            .stat {
+                width: 100%;
+            }
+        }
+    }
+
+}

@@ -90,14 +90,6 @@ const Leftbar = () => {
                             setSelected={setSelected}
                         ></Item>
                     </Link>
-                    <Link to='/account'>
-                        <Item
-                            title='Account'
-                            icon={<MdOutlineAccountCircle />}
-                            selected={selected}
-                            setSelected={setSelected}
-                        ></Item>
-                    </Link>
                     <SubMenu label="Charts" icon={<BiLineChart />}>
                         <Link to='/pieGraph'>
                             <Item

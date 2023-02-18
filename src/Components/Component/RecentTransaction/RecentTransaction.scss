@@ -1,0 +1,128 @@
+@import '../../../style.scss';
+
+.recent {
+    flex: 4;
+    height: 380px;
+    position: relative;
+    background: #fcfcfc;
+
+    @include mobile {
+        padding-bottom: 30px;
+    }
+
+    @include tablet {
+        padding-bottom: 30px;
+    }
+
+    .header {
+        padding: 20px 20px 10px;
+        z-index: 99;
+        position: relative;
+
+        h4 {
+            position: sticky;
+            top: 0;
+            margin-bottom: 0;
+            font-weight: 600;
+            font-size: 22px;
+            @include mobile {
+                font-size: 20px;
+            }
+        }
+    }
+
+    .history {
+        height: 310px;
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+        padding: 0 20px 20px;
+        overflow: scroll;
+
+        @include mobile {
+            gap: 5px;
+        }
+
+        @include tablet {
+            gap: 7px;
+        }
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        .item {
+            padding: 15px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(210, 251, 164, 0.6);
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -ms-border-radius: 5px;
+            -o-border-radius: 5px;
+            position: relative;
+
+            @include mobile {
+                padding: 10px;
+            }
+
+            @include tablet {
+                padding: 15px 10px;
+            }
+
+            .user {
+                display: flex;
+                flex-direction: column;
+
+                span {
+                    font-size: 14px;
+                    font-weight: 600;
+                    color: #01522d;
+                }
+
+                h5 {
+                    display: flex;
+                    align-items: center;
+                    gap: 3px;
+                    font-weight: 600;
+                    font-size: 16px;
+                    margin-bottom: 0;
+                    text-transform: capitalize;
+                }
+            }
+
+            small {
+                font-weight: 600;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                -webkit-transform: translate(-50%, -50%);
+                -moz-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                -o-transform: translate(-50%, -50%);
+
+                @include mobile {
+                    font-size: 13px;
+                }
+            }
+
+            .cost {
+                padding: 5px 10px;
+                background: #01522d;
+                color: #fff;
+                border-radius: 3px;
+                -webkit-border-radius: 3px;
+                -moz-border-radius: 3px;
+                -ms-border-radius: 3px;
+                -o-border-radius: 3px;
+
+                @include mobile {
+                    padding: 3px 7px;
+                }
+            }
+        }
+    }
+}

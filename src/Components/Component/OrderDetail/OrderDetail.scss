@@ -1,0 +1,85 @@
+@import '../../../style.scss';
+
+.detail {
+    padding: 30px;
+    width: 40%;
+    min-height: 60%;
+    
+    @include tablet {
+        width: 80%;
+        min-height: 50%;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        .order-box {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            max-height: 230px;
+            padding: 5px;
+            background: #fff;
+            overflow: scroll;
+            @include tablet {
+                max-height: 400px;
+            }
+
+            &::-webkit-scrollbar-track {
+                display: none;
+            }
+
+            .item {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 5px 10px;
+                background: rgba(210, 251, 164, 0.6);
+
+                .food {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    img {
+                        width: 40px;
+                        height: 40px;
+                        object-fit: cover;
+                        border-radius: 50%;
+                        -webkit-border-radius: 50%;
+                        -moz-border-radius: 50%;
+                        -ms-border-radius: 50%;
+                        -o-border-radius: 50%;
+                        @include tablet {
+                            width: 35px;
+                            height: 35px;
+                        }
+                    }
+
+                    h5 {
+                        font-size: 18px;
+                        font-weight: 600;
+                        margin-bottom: 0;
+                    }
+                }
+
+                small {
+                    display: flex;
+                    align-items: center;
+                    font-weight: 600;
+                }
+            }
+        }
+        h4{
+            padding: 20px;
+            font-size: 28px;
+            font-weight: 600;
+            color: #01522d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            margin-bottom: 0;
+        }
+    }
+}
